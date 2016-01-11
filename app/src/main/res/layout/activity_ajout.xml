@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Vue.Accueil">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtNom"
+        android:hint="@string/nom"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPrenom"
+        android:hint="@string/prenom"
+        android:layout_below="@+id/txtNom"
+        android:layout_alignLeft="@+id/txtTel"
+        android:layout_alignStart="@+id/txtTel"
+        android:layout_alignRight="@+id/txtNom"
+        android:layout_alignEnd="@+id/txtNom" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/txtTel"
+        android:hint="@string/tel"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/txtPrenom"
+        android:layout_alignLeft="@+id/txtNom"
+        android:layout_alignStart="@+id/txtNom"
+        android:layout_toStartOf="@+id/bAjout"
+        android:layout_alignRight="@+id/txtNom"
+        android:layout_alignEnd="@+id/txtNom" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rgSexe"
+        android:layout_below="@+id/txtTel"
+        android:layout_alignLeft="@+id/txtTel"
+        android:layout_alignStart="@+id/txtTel">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homme"
+            android:id="@+id/rbHomme"
+            android:checked="false"
+            android:layout_gravity="center_vertical" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/femme"
+            android:id="@+id/rbFemme"
+            android:checked="false"
+            android:layout_gravity="center_vertical" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ajout"
+        android:id="@+id/bAjout"
+        android:onClick="onClickStock"
+        android:layout_below="@+id/rgSexe"
+        android:layout_alignLeft="@+id/txtNom"
+        android:layout_alignStart="@+id/txtNom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retour"
+        android:id="@+id/bAnnule"
+        android:onClick="onClickAnnule"
+        android:layout_alignTop="@+id/bAjout"
+        android:layout_alignRight="@+id/txtPrenom"
+        android:layout_alignEnd="@+id/txtPrenom"
+        android:nestedScrollingEnabled="false" />
+
+</RelativeLayout>

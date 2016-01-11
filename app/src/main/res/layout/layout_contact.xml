@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nom"
+        android:id="@+id/tvNom"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prenom"
+        android:id="@+id/tvPrenom"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tvNom"
+        android:layout_toEndOf="@+id/tvNom"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tel"
+        android:id="@+id/tvTel"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/ivGenre"
+        android:layout_toStartOf="@+id/ivGenre"
+        android:textColor="#000000"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivGenre"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/inconnu"
+        android:layout_alignBottom="@+id/tvTel"
+        android:contentDescription="@string/genre" />
+</RelativeLayout>
