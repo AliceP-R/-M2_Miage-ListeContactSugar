@@ -25,13 +25,11 @@ public class Modification extends AppCompatActivity
 
     Long idPersonne;
     Personne base;
-    String recherche;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modification);
         Intent reception = getIntent();
-        recherche = reception.getStringExtra("text_recherche");
         idPersonne = Long.parseLong(reception.getStringExtra("select-id"));
 
         List<Personne> res = Personne.find(Personne.class, "id = " + idPersonne.toString());
@@ -71,9 +69,8 @@ public class Modification extends AppCompatActivity
             base.save();
 
             Toast.makeText(getApplicationContext(), "Modification faite !", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(getApplicationContext(), Rechercher.class);
-            intent.putExtra("text_recherche", recherche);
-            startActivity(intent);
+
+            finish();
         }
     }
 
@@ -88,18 +85,15 @@ public class Modification extends AppCompatActivity
 
                 base.delete();
                 Toast.makeText(getApplicationContext(), "Suppression faite !", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), Rechercher.class);
-                intent.putExtra("text_recherche", recherche);
-                startActivity(intent);
+                finish();
             }
         });
         builder.setNegativeButton("Non", null);
         builder.show();
     }
 
-    public void onClickAccueil(View v)
+    public void onClickRetourRecherche(View v)
     {
-        Intent annulation = new Intent(this, Accueil.class);
-        startActivity(annulation);
+        finish();
     }
 }

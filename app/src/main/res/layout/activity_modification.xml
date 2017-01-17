@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="@string/retour"
         android:id="@+id/bAnnule"
-        android:onClick="onClickAccueil"
+        android:onClick="onClickRetourRecherche"
         android:layout_alignBaseline="@+id/bSuppr"
         android:layout_alignBottom="@+id/bSuppr"
         android:layout_alignParentRight="true"
