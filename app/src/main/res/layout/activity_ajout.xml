@@ -22,7 +22,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPrenom"
+        android:id="@+id/txtRecherche"
         android:hint="@string/prenom"
         android:layout_below="@+id/txtNom"
         android:layout_alignLeft="@+id/txtTel"
@@ -38,10 +38,10 @@
         android:id="@+id/txtTel"
         android:hint="@string/tel"
         android:layout_gravity="center_vertical"
-        android:layout_below="@+id/txtPrenom"
+        android:layout_below="@+id/txtRecherche"
         android:layout_alignLeft="@+id/txtNom"
         android:layout_alignStart="@+id/txtNom"
-        android:layout_toStartOf="@+id/bAjout"
+        android:layout_toStartOf="@+id/bRecherche"
         android:layout_alignRight="@+id/txtNom"
         android:layout_alignEnd="@+id/txtNom" />
 
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ajout"
-        android:id="@+id/bAjout"
+        android:id="@+id/bRecherche"
         android:onClick="onClickStock"
         android:layout_below="@+id/rgSexe"
         android:layout_alignLeft="@+id/txtNom"
@@ -87,9 +87,9 @@
         android:text="@string/retour"
         android:id="@+id/bAnnule"
         android:onClick="onClickAnnule"
-        android:layout_alignTop="@+id/bAjout"
-        android:layout_alignRight="@+id/txtPrenom"
-        android:layout_alignEnd="@+id/txtPrenom"
+        android:layout_alignTop="@+id/bRecherche"
+        android:layout_alignRight="@+id/txtRecherche"
+        android:layout_alignEnd="@+id/txtRecherche"
         android:nestedScrollingEnabled="false" />
 
 </RelativeLayout>

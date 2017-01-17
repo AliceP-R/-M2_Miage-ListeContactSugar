@@ -11,4 +11,7 @@
     <string name="genre">Sexe</string>
     <string name="ajout">Ajouter</string>
     <string name="retour">Retour</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="votre_recherche">Votre Recherche</string>
+    <string name="nomBD">nomBD</string>
 </resources>

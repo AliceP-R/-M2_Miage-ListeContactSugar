@@ -75,18 +75,7 @@ public class ListeContact extends ListActivity {
             else
                 s = Sexe.FEMME;
             lPersonne.add(new Personne(s, nom, tel, prenom));
-            //sb.append(sexe).append(" ").append(nom).append(" ").append(prenom).append(" : ").append(clef).append("\n");
         }
-        /*
-        new AlertDialog.Builder(this)
-                .setTitle("Le fichier contient : ")
-                .setMessage(sb.toString())
-                .setPositiveButton(android.R.string.yes,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).show();
-        */
     }
 
     public void onClickRetour(View v)

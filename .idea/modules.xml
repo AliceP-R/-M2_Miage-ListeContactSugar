@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Stockage.iml" filepath="$PROJECT_DIR$/Stockage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/-MIAGE_M1_Android-ListeContact.iml" filepath="$PROJECT_DIR$/-MIAGE_M1_Android-ListeContact.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

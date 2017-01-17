@@ -25,8 +25,18 @@
         android:text="Voir mes contacts"
         android:id="@+id/bVoir"
         android:onClick="onClickVisu"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/bAjout"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recherche un contact"
+        android:id="@+id/bRecherche"
+        android:onClick="onClickRecherche"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/bVoir"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

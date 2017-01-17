@@ -1,6 +1,7 @@
 package com.example.alice.stockage.Vue;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.alice.stockage.BDD.DataBaseClass;
 import com.example.alice.stockage.R;
 import com.example.alice.stockage.Donnees.Sexe;
 
@@ -16,7 +18,8 @@ import java.io.FileWriter;
 
 public class Ajout extends AppCompatActivity {
 
-    String FILENAME;
+    String FILENAME; // méthode avec l'enregistrement dans un fichier
+    SQLiteDatabase Contacts; // méthode avec SQLite
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +27,16 @@ public class Ajout extends AppCompatActivity {
         setContentView(R.layout.activity_ajout);
         Intent reception = getIntent();
         FILENAME = reception.getStringExtra("fichier");
+        Contacts = DataBaseClass.getInstance();
     }
 
-    private void ajoutNom(String texte)
+    private void ajoutNom(String tel, String nom, String prenom, String s)
     {
+
+        // Ajout dans un fichier
         File fos;
         FileWriter fw;
+        String texte = tel + "=" + nom + ";" + prenom + ";"+s+"\n";
 
         try
         {
@@ -37,19 +44,37 @@ public class Ajout extends AppCompatActivity {
             fw = new FileWriter(fos, true);
             fw.write(texte);
             fw.close();
+
+            Toast.makeText(getApplicationContext(), "Ajout réussi dans le fichier!", Toast.LENGTH_LONG).show();
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
 
-        Toast.makeText(getApplicationContext(), "Contact ajouté : " + texte, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Contact ajouté : " + texte, Toast.LENGTH_LONG).show();
+
+
+        // Ajout dans la BDD SQLite
+        try{
+
+            Contacts.execSQL("INSERT INTO contacts (nom, prenom, tel)"+
+                             " VALUES('" + nom + "', '" + prenom + "','"+ tel +"')");
+//etc)
+            Toast.makeText(this, "Le contact" + nom + " "
+                    + prenom + "a été inséré", Toast.LENGTH_LONG).show();
+        }
+
+        catch (Exception e){
+            Toast.makeText(this, "Le contact n'a pas pu être inséré", Toast.LENGTH_SHORT).show();
+        }
     }
+
 
     public void onClickStock(View v)
     {
         EditText etNom = (EditText) findViewById(R.id.txtNom);
-        EditText etPrenom = (EditText) findViewById(R.id.txtPrenom);
+        EditText etPrenom = (EditText) findViewById(R.id.txtRecherche);
         EditText etTel = (EditText) findViewById(R.id.txtTel);
         RadioButton rbH = (RadioButton) findViewById(R.id.rbHomme);
         RadioButton rbF = (RadioButton) findViewById(R.id.rbFemme);
@@ -84,7 +109,7 @@ public class Ajout extends AppCompatActivity {
         else
             s=Sexe.FEMME;
 
-        ajoutNom(tel + "=" + nom + ";" + prenom + ";"+s.toString()+"\n");
+        ajoutNom(tel, nom, prenom, s.toString());
     }
 
     public void onClickAnnule(View v)

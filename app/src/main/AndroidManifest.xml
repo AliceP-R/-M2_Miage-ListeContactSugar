@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".Vue.Ajout" />
         <activity android:name=".Vue.ListeContact"/>
+        <activity android:name=".Vue.Rechercher"/>
     </application>
 
 </manifest>
