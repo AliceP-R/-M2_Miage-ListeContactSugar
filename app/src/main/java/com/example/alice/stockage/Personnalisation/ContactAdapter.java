@@ -1,7 +1,6 @@
 package com.example.alice.stockage.Personnalisation;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.alice.stockage.Donnees.Personne;
-import com.example.alice.stockage.Donnees.Sexe;
 import com.example.alice.stockage.R;
 
 import java.util.ArrayList;
@@ -65,18 +63,12 @@ public class ContactAdapter extends BaseAdapter {
         TextView tvNom = (TextView)layoutItem.findViewById(R.id.tvNom);
         TextView tvPrenom = (TextView)layoutItem.findViewById(R.id.tvPrenom);
         TextView tvTel = (TextView)layoutItem.findViewById(R.id.tvTel);
-        ImageView ivGenre = (ImageView)layoutItem.findViewById(R.id.ivGenre);
         //endregion
 
         //region Modification des champs
         tvNom.setText(listeContact.get(position).getNom());
         tvPrenom.setText(listeContact.get(position).getPrenom());
         tvTel.setText(listeContact.get(position).getNumero());
-        Sexe genre = listeContact.get(position).getGenre();
-        if(genre == Sexe.HOMME)
-            ivGenre.setImageResource(R.drawable.homme);
-        else if (genre == Sexe.FEMME)
-            ivGenre.setImageResource(R.drawable.femme);
         //endregion
 
         return layoutItem;

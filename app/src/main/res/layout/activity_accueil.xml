@@ -12,12 +12,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ajouter un contact"
-        android:id="@+id/bAjout"
-        android:onClick="onClickAjout"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp" />
+        android:text="Recherche un contact"
+        android:id="@+id/bRecherche"
+        android:onClick="onClickRecherche"
+        android:layout_below="@+id/bAjouter"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,17 +24,16 @@
         android:text="Voir mes contacts"
         android:id="@+id/bVoir"
         android:onClick="onClickVisu"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/bAjout"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recherche un contact"
-        android:id="@+id/bRecherche"
-        android:onClick="onClickRecherche"
-        android:layout_marginTop="20dp"
+        android:text="Ajouter un contact"
+        android:id="@+id/bAjouter"
+        android:onClick="onClickAjout"
         android:layout_below="@+id/bVoir"
         android:layout_centerHorizontal="true" />
 
