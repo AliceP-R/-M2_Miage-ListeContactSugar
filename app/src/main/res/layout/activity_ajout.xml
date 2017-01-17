@@ -12,14 +12,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPrenom"
-        android:hint="@string/prenom"
-        android:layout_below="@+id/txtNom"
-        />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/txtTel"
@@ -58,5 +50,16 @@
         android:layout_below="@+id/txtTel"
         android:layout_toRightOf="@+id/bAjout"
         android:layout_toEndOf="@+id/bAjout" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPrenom"
+        android:hint="@string/prenom"
+        android:layout_below="@+id/txtNom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/txtTel"
+        android:layout_alignEnd="@+id/txtTel" />
 
 </RelativeLayout>

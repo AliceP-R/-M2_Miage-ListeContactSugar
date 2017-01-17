@@ -63,12 +63,14 @@ public class ContactAdapter extends BaseAdapter {
         TextView tvNom = (TextView)layoutItem.findViewById(R.id.tvNom);
         TextView tvPrenom = (TextView)layoutItem.findViewById(R.id.tvPrenom);
         TextView tvTel = (TextView)layoutItem.findViewById(R.id.tvTel);
+        TextView tvId = (TextView) layoutItem.findViewById(R.id.tvId);
         //endregion
 
         //region Modification des champs
         tvNom.setText(listeContact.get(position).getNom());
         tvPrenom.setText(listeContact.get(position).getPrenom());
         tvTel.setText(listeContact.get(position).getNumero());
+        tvId.setText(listeContact.get(position).getId().toString());
         //endregion
 
         return layoutItem;

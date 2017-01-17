@@ -13,29 +13,10 @@ import com.example.alice.stockage.R;
 
 public class Ajout extends AppCompatActivity {
 
-    String FILENAME; // méthode avec l'enregistrement dans un fichier
-    SQLiteDatabase Contacts; // méthode avec SQLite
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout);
-    }
-
-    private void ajoutNom(String tel, String nom, String prenom)
-    {
-
-        try
-        {
-            Personne p = new Personne(nom, tel, prenom);
-            p.save(); // ajoute à la BDD
-
-            Toast.makeText(getApplicationContext(), "Ajout réussi avec Sugar!", Toast.LENGTH_LONG).show();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
     }
 
 
@@ -65,7 +46,21 @@ public class Ajout extends AppCompatActivity {
             return;
         }
 
-        ajoutNom(tel, nom, prenom);
+        try
+        {
+            Personne p = new Personne(nom, tel, prenom);
+            p.save(); // ajoute à la BDD
+
+            Toast.makeText(getApplicationContext(), "Ajout réussi avec Sugar!", Toast.LENGTH_LONG).show();
+
+            etNom.setText("");
+            etPrenom.setText("");
+            etTel.setText("");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void onClickAnnule(View v)
