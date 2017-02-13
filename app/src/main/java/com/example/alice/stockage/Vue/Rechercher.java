@@ -22,7 +22,6 @@ public class Rechercher extends AppCompatActivity {
     private ArrayList lPersonne;
     private ArrayList lRes;
     private ContactAdapter adapterContact;
-    private ListView lv;
 
     public class ListClickHandler implements AdapterView.OnItemClickListener {
 
@@ -54,7 +53,7 @@ public class Rechercher extends AppCompatActivity {
 
         adapterContact = new ContactAdapter(this, lPersonne);
         adapterContact.notifyDataSetChanged();
-        lv = (ListView) findViewById(R.id.lview);
+        ListView lv = (ListView) findViewById(R.id.lview);
         lv.setAdapter(adapterContact);
         lv.setOnItemClickListener(new ListClickHandler());
     }

@@ -41,8 +41,6 @@ public class Modification extends AppCompatActivity
         etNom.setText(base.getNom());
         etPrenom.setText(base.getPrenom());
         etTel.setText(base.getNumero());
-
-        Toast.makeText(getApplicationContext(), "ID "+base.getId().toString()+"!", Toast.LENGTH_LONG).show();
     }
 
     public void onClickModif(View v)
