@@ -42,19 +42,21 @@ public class Rechercher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rechercher);
 
-        Toast.makeText(getApplicationContext(), "onCreate", Toast.LENGTH_SHORT).show();
-
-        lPersonne = new ArrayList<>();
-        lRes = new ArrayList();
-        adapterContact = new ContactAdapter(this, lPersonne);
-        lv = (ListView) findViewById(R.id.lview);
-        lv.setAdapter(adapterContact);
-        lv.setOnItemClickListener(new ListClickHandler());
-
         EditText recherche=(EditText) findViewById(R.id.txtRecherche);
         recherche.setText("");
 
+        // On réinitialise toutes les valeurs pour éviter que la recherche se fasse même à la première ouverture de l'activité
+        lPersonne = new ArrayList();
+        lRes = new ArrayList();
 
+        lPersonne.clear();
+        lRes.clear();
+
+        adapterContact = new ContactAdapter(this, lPersonne);
+        adapterContact.notifyDataSetChanged();
+        lv = (ListView) findViewById(R.id.lview);
+        lv.setAdapter(adapterContact);
+        lv.setOnItemClickListener(new ListClickHandler());
     }
 
     private void recherche()
@@ -81,7 +83,6 @@ public class Rechercher extends AppCompatActivity {
     protected void onStart()
     {
         super.onStart();
-        Toast.makeText(getApplicationContext(), "onStart", Toast.LENGTH_SHORT).show();
         recherche();
 
 

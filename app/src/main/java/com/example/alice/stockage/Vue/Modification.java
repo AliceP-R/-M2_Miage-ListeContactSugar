@@ -3,7 +3,6 @@ package com.example.alice.stockage.Vue;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -92,8 +91,10 @@ public class Modification extends AppCompatActivity
         builder.show();
     }
 
+    // Permet de retourner sur l'activité précédente donc sur Recherche
     public void onClickRetourRecherche(View v)
     {
+
         finish();
     }
 }
